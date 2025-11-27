@@ -11,5 +11,5 @@ This project involves a comprehensive analysis of Netflix's movies and TV shows 
 - List and analyze content based on release years, countries, and durations.
 - Explore and categorize content based on specific criteria and keywords.
 ## Dataset Used
-- <a href= "https://github.com/bharathi2494/NETFLIX_sql_project/blob/main/netflix_titles_dataset.csv">Dataset</a>
+- <a href= "https://github.com/bharathi2494/NETFLIX_sql_project/blob/main/netflix_titles_dataset.csv">Dataset Link</a>
 
