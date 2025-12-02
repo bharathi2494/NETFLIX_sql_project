@@ -37,7 +37,7 @@ SELECT
 FROM netflix
 GROUP BY 1;
 
--Objective: Determine the distribution of content types on Netflix.
+- Objective: Determine the distribution of content types on Netflix.
 
 ## 2. Find the Most Common Rating for Movies and TV Shows
 WITH RatingCounts AS (
@@ -62,14 +62,14 @@ SELECT
 FROM RankedRatings
 WHERE rank = 1;
 
--Objective: Identify the most frequently occurring rating for each type of content.
+- Objective: Identify the most frequently occurring rating for each type of content.
 
 ## 3. List All Movies Released in a Specific Year (e.g., 2020)
 SELECT * 
 FROM netflix
 WHERE release_year = 2020;
 
--Objective: Retrieve all movies released in a specific year.
+- Objective: Retrieve all movies released in a specific year.
 
 ## 4. Find the Top 5 Countries with the Most Content on Netflix
 SELECT * 
@@ -84,7 +84,7 @@ FROM
 WHERE country IS NOT NULL
 ORDER BY total_content DESC
 LIMIT 5;
-Objective: Identify the top 5 countries with the highest number of content items.
+- Objective: Identify the top 5 countries with the highest number of content items.
 
 ## 5. Identify the Longest Movie
 SELECT 
@@ -93,14 +93,14 @@ FROM netflix
 WHERE type = 'Movie'
 ORDER BY SPLIT_PART(duration, ' ', 1)::INT DESC;
 
--Objective: Find the movie with the longest duration.
+- Objective: Find the movie with the longest duration.
 
 ## 6. Find Content Added in the Last 5 Years
 SELECT *
 FROM netflix
 WHERE TO_DATE(date_added, 'Month DD, YYYY') >= CURRENT_DATE - INTERVAL '5 years';
 
--Objective: Retrieve content added to Netflix in the last 5 years.
+- Objective: Retrieve content added to Netflix in the last 5 years.
 
 ## 7. Find All Movies/TV Shows by Director 'Rajiv Chilaka'
 SELECT *
@@ -112,7 +112,7 @@ FROM (
 ) AS t
 WHERE director_name = 'Rajiv Chilaka';
 
--Objective: List all content directed by 'Rajiv Chilaka'.
+- Objective: List all content directed by 'Rajiv Chilaka'.
 
 ## 8. List All TV Shows with More Than 5 Seasons
 SELECT *
@@ -120,7 +120,7 @@ FROM netflix
 WHERE type = 'TV Show'
   AND SPLIT_PART(duration, ' ', 1)::INT > 5;
   
--Objective: Identify TV shows with more than 5 seasons.
+- Objective: Identify TV shows with more than 5 seasons.
 
 ## 9. Count the Number of Content Items in Each Genre
 SELECT 
@@ -129,7 +129,7 @@ SELECT
 FROM netflix
 GROUP BY 1;
 
--Objective: Count the number of content items in each genre.
+- Objective: Count the number of content items in each genre.
 
 ## 10.Find each year and the average numbers of content release in India on netflix.
 return top 5 year with highest avg content release!
@@ -148,21 +148,21 @@ GROUP BY country, release_year
 ORDER BY avg_release DESC
 LIMIT 5;
 
--Objective: Calculate and rank years by the average number of content releases by India.
+- Objective: Calculate and rank years by the average number of content releases by India.
 
 ## 11. List All Movies that are Documentaries
 SELECT * 
 FROM netflix
 WHERE listed_in LIKE '%Documentaries';
 
--Objective: Retrieve all movies classified as documentaries.
+- Objective: Retrieve all movies classified as documentaries.
 
 ## 12. Find All Content Without a Director
 SELECT * 
 FROM netflix
 WHERE director IS NULL;
 
--Objective: List content that does not have a director.
+- Objective: List content that does not have a director.
 
 ## 13. Find How Many Movies Actor 'Salman Khan' Appeared in the Last 10 Years
 SELECT * 
@@ -170,7 +170,7 @@ FROM netflix
 WHERE casts LIKE '%Salman Khan%'
   AND release_year > EXTRACT(YEAR FROM CURRENT_DATE) - 10;
   
--Objective: Count the number of movies featuring 'Salman Khan' in the last 10 years.
+- Objective: Count the number of movies featuring 'Salman Khan' in the last 10 years.
 
 ## 14. Find the Top 10 Actors Who Have Appeared in the Highest Number of Movies Produced in India
 SELECT 
@@ -182,7 +182,7 @@ GROUP BY actor
 ORDER BY COUNT(*) DESC
 LIMIT 10;
 
--Objective: Identify the top 10 actors with the most appearances in Indian-produced movies.
+- Objective: Identify the top 10 actors with the most appearances in Indian-produced movies.
 
 ## 15. Categorize Content Based on the Presence of 'Kill' and 'Violence' Keywords
 SELECT 
@@ -198,13 +198,13 @@ FROM (
 ) AS categorized_content
 GROUP BY category;
 
--Objective: Categorize content as 'Bad' if it contains 'kill' or 'violence' and 'Good' otherwise. Count the number of items in each category.
+- Objective: Categorize content as 'Bad' if it contains 'kill' or 'violence' and 'Good' otherwise. Count the number of items in each category.
 
 ## Findings and Conclusion
--Content Distribution: The dataset contains a diverse range of movies and TV shows with varying ratings and genres.
--Common Ratings: Insights into the most common ratings provide an understanding of the content's target audience.
--Geographical Insights: The top countries and the average content releases by India highlight regional content distribution.
--Content Categorization: Categorizing content based on specific keywords helps in understanding the nature of content available on Netflix.
--This analysis provides a comprehensive view of Netflix's content and can help inform content strategy and decision-making.
+- Content Distribution: The dataset contains a diverse range of movies and TV shows with varying ratings and genres.
+- Common Ratings: Insights into the most common ratings provide an understanding of the content's target audience.
+- Geographical Insights: The top countries and the average content releases by India highlight regional content distribution.
+- Content Categorization: Categorizing content based on specific keywords helps in understanding the nature of content available on Netflix.
+- This analysis provides a comprehensive view of Netflix's content and can help inform content strategy and decision-making.
 
 
